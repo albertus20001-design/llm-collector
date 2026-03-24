@@ -161,15 +161,8 @@ vendors:
         tags: [api]
         fetchMode: markdown
         outputPath: data/deepseek/api-chat.md
-      - name: api-models
-        url: https://api-docs.deepseek.com/models
-        enabled: true
-        priority: 2
-        tags: [api, models]
-        fetchMode: markdown
-        outputPath: data/deepseek/api-models.md
       - name: api-errors
-        url: https://api-docs.deepseek.com/guide/error_code
+        url: https://api-docs.deepseek.com/guide/error_code/index.html
         enabled: true
         priority: 3
         tags: [api, errors]
@@ -179,7 +172,7 @@ vendors:
     group: aggregator
     sources:
       - name: pricing
-        url: https://openrouter.ai/docs/pricing
+        url: https://openrouter.ai/pricing
         enabled: true
         priority: 1
         tags: [pricing]
@@ -199,15 +192,8 @@ vendors:
         tags: [api, models]
         fetchMode: markdown
         outputPath: data/openrouter/api-models.md
-      - name: api-rate-limits
-        url: https://openrouter.ai/docs/requests-and-rate-limits
-        enabled: true
-        priority: 3
-        tags: [api, limits]
-        fetchMode: markdown
-        outputPath: data/openrouter/api-rate-limits.md
       - name: api-errors
-        url: https://openrouter.ai/docs/errors
+        url: https://openrouter.ai/docs/api-reference/errors
         enabled: true
         priority: 3
         tags: [api, errors]
