@@ -1,0 +1,13 @@
+{
+  "name": "intel-collector",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "mintlify dev",
+    "build": "mintlify build",
+    "check": "mintlify build"
+  },
+  "devDependencies": {
+    "mintlify": "latest"
+  }
+}

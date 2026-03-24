@@ -1,0 +1,27 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Intel Collector",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "colors": {
+    "primary": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#4c1d95"
+  },
+  "navigation": [
+    {
+      "group": "Overview",
+      "pages": ["index"]
+    },
+    {
+      "group": "Collection",
+      "pages": ["collection/sources", "collection/schedule", "collection/output"]
+    },
+    {
+      "group": "Ops",
+      "pages": ["ops/runbook", "ops/changelog"]
+    }
+  ]
+}
