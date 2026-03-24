@@ -11,12 +11,31 @@ function changedFiles() {
 }
 
 function classify(name) {
-  if (/pricing/i.test(name)) return 'pricing';
-  if (/rate-limits?/i.test(name)) return 'limits';
-  if (/error/i.test(name)) return 'errors';
-  if (/model/i.test(name)) return 'models';
-  if (/chat|responses?|introduction|messages|completions|api/i.test(name)) return 'api';
-  return 'other';
+  if (/pricing/i.test(name)) return '价格';
+  if (/rate-limits?/i.test(name)) return '限流';
+  if (/error/i.test(name)) return '错误';
+  if (/model/i.test(name)) return '模型';
+  if (/chat|responses?|introduction|messages|completions|api/i.test(name)) return '接口';
+  return '其他';
+}
+
+function label(name) {
+  const map = [
+    [/pricing/i, '价格页'],
+    [/api-introduction/i, 'API 总览'],
+    [/api-messages/i, '消息接口'],
+    [/api-completions/i, '补全接口'],
+    [/api-chat/i, '聊天接口'],
+    [/api-responses/i, 'Responses 接口'],
+    [/api-models/i, '模型页'],
+    [/api-errors/i, '错误码页'],
+    [/api-error-codes/i, '错误码页'],
+    [/api-rate-limits/i, '限流页'],
+    [/api-structured-output/i, '结构化输出页'],
+    [/api-overview/i, 'API 概览页'],
+  ];
+  for (const [re, text] of map) if (re.test(name)) return text;
+  return name;
 }
 
 const files = changedFiles();
@@ -44,7 +63,7 @@ if (files.length === 0) {
     }
     for (const [bucket, list] of groups.entries()) {
       md += `### ${bucket}\n`;
-      for (const item of list) md += `- ${item}\n`;
+      for (const item of list) md += `- ${label(item)} (${item})\n`;
     }
     md += '\n';
   }
