@@ -57,7 +57,7 @@ function parseSourcesYaml(yml) {
     if (m) { inSources = true; continue; }
     m = line.match(/^\s{6}-\s+name:\s*(\S+)\s*$/);
     if (m && inSources) {
-      current = { vendor, name: m[1], enabled: true, priority: 99, tags: [], rejectPatterns: [], fetchMode: 'markdown', timeoutSeconds: DEFAULT_TIMEOUT, preferMarkdown: true };
+      current = { vendor, name: m[1], enabled: true, priority: 99, tags: [], rejectPatterns: [], fetchMode: 'markdown', timeoutSeconds: DEFAULT_TIMEOUT };
       items.push(current);
       continue;
     }
@@ -68,7 +68,6 @@ function parseSourcesYaml(yml) {
     m = line.match(/^\s{8}fetchMode:\s*(\S+)\s*$/); if (m) { current.fetchMode = m[1]; continue; }
     m = line.match(/^\s{8}outputPath:\s*(\S+)\s*$/); if (m) { current.outputPath = m[1]; continue; }
     m = line.match(/^\s{8}timeoutSeconds:\s*(\d+)\s*$/); if (m) { current.timeoutSeconds = Number(m[1]); continue; }
-    m = line.match(/^\s{8}preferMarkdown:\s*(true|false)\s*$/); if (m) { current.preferMarkdown = m[1] === 'true'; continue; }
     m = line.match(/^\s{8}tags:\s*\[(.*)\]\s*$/); if (m) { current.tags = m[1].split(',').map(s => s.trim()).filter(Boolean); continue; }
     m = line.match(/^\s{8}notes:\s*(.+)$/); if (m) { current.notes = m[1]; continue; }
     m = line.match(/^\s{8}rejectPatterns:\s*$/); if (m) { current.rejectPatterns = []; continue; }
@@ -78,11 +77,10 @@ function parseSourcesYaml(yml) {
 }
 
 function resolveSourceUrl(src) {
-  if (src.preferMarkdown === false) return src.url;
-  if (src.url.endsWith('.md')) return src.url;
+  if (src.url.endsWith('.md') || src.url.endsWith('.txt')) return src.url;
   const md = `${src.url}.md`;
   const effective = probeUrl(md, src.timeoutSeconds);
-  if (effective.endsWith('.md')) return effective;
+  if (effective.endsWith('.md') || effective.endsWith('.txt')) return effective;
   return src.url;
 }
 
@@ -98,7 +96,7 @@ for (const src of sources) {
     console.log(`skipped ${file} (fetch failed or rejected, keeping existing snapshot)`);
     continue;
   }
-  const meta = [`Source: ${effectiveUrl}`, src.fetchMode ? `FetchMode: ${src.fetchMode}` : null, `TimeoutSeconds: ${src.timeoutSeconds}`, src.preferMarkdown !== undefined ? `PreferMarkdown: ${src.preferMarkdown}` : null, src.tags?.length ? `Tags: ${src.tags.join(', ')}` : null, src.notes ? `Notes: ${src.notes}` : null].filter(Boolean).join('\n');
+  const meta = [`Source: ${effectiveUrl}`, src.fetchMode ? `FetchMode: ${src.fetchMode}` : null, `TimeoutSeconds: ${src.timeoutSeconds}`, src.tags?.length ? `Tags: ${src.tags.join(', ')}` : null, src.notes ? `Notes: ${src.notes}` : null].filter(Boolean).join('\n');
   const out = `# ${src.vendor} ${src.name}\n\nGenerated at: ${stamp}\n\n${meta}\n\n${body.trimEnd()}\n`;
   writeFileSync(file, out);
   console.log(`updated ${file}`);
