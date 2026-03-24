@@ -1,6 +1,6 @@
 # Today Diff
 
-今日有 15 个数据文件变化。
+今日有 17 个数据文件变化。
 
 ## anthropic
 ### 接口
@@ -27,6 +27,10 @@
 - 价格页 (pricing.md)
 
 ## openai
+### 错误
+- 错误码页 (api-errors.md)
+### 限流
+- 限流页 (api-rate-limits.md)
 ### 价格
 - 价格页 (pricing.md)
 

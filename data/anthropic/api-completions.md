@@ -1,10 +1,11 @@
 # anthropic api-completions
 
-Generated at: 2026-03-24T04:07:52.412Z
+Generated at: 2026-03-24T04:28:32.625Z
 
-Source: https://docs.claude.com/en/api/completions.md
+Source: https://platform.claude.com/docs/en/api/completions.md
 FetchMode: markdown
 TimeoutSeconds: 20
+PreferMarkdown: true
 Tags: api
 
 # Completions
