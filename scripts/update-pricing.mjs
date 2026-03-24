@@ -1,8 +1,10 @@
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, writeFileSync, existsSync, readFileSync } from 'node:fs';
 import { dirname } from 'node:path';
+import TurndownService from 'turndown';
 
 const DEFAULT_TIMEOUT = '20';
+const turndown = new TurndownService({ headingStyle: 'atx', codeBlockStyle: 'fenced' });
 
 function fetchUrl(url, timeoutSeconds = DEFAULT_TIMEOUT) {
   try {
@@ -11,6 +13,14 @@ function fetchUrl(url, timeoutSeconds = DEFAULT_TIMEOUT) {
   } catch (e) {
     return { ok: false, body: `ERROR_FETCHING_URL\n${String(e.stderr || e.message || e)}` };
   }
+}
+
+function toMarkdown(body) {
+  const trimmed = body.trimStart();
+  if (/^<!doctype html>|^<html[\s>]/i.test(trimmed)) {
+    return turndown.turndown(body);
+  }
+  return body;
 }
 
 function isBadContent(body, patterns) {
@@ -52,12 +62,13 @@ for (const src of sources) {
   const result = fetchUrl(src.url, src.timeoutSeconds);
   const file = src.outputPath || `data/${src.vendor}/${src.name}.md`;
   mkdirSync(dirname(file), { recursive: true });
-  if ((!result.ok || isBadContent(result.body, src.rejectPatterns)) && existsSync(file)) {
+  const body = result.ok ? toMarkdown(result.body) : result.body;
+  if ((!result.ok || isBadContent(body, src.rejectPatterns)) && existsSync(file)) {
     console.log(`skipped ${file} (fetch failed or rejected, keeping existing snapshot)`);
     continue;
   }
   const meta = [`Source: ${src.url}`, src.fetchMode ? `FetchMode: ${src.fetchMode}` : null, `TimeoutSeconds: ${src.timeoutSeconds}`, src.tags?.length ? `Tags: ${src.tags.join(', ')}` : null, src.notes ? `Notes: ${src.notes}` : null].filter(Boolean).join('\n');
-  const out = `# ${src.vendor} ${src.name}\n\nGenerated at: ${stamp}\n\n${meta}\n\n${result.body.trimEnd()}\n`;
+  const out = `# ${src.vendor} ${src.name}\n\nGenerated at: ${stamp}\n\n${meta}\n\n${body.trimEnd()}\n`;
   writeFileSync(file, out);
   console.log(`updated ${file}`);
 }
