@@ -1,12 +1,3 @@
-# anthropic api-rate-limits
-
-Generated at: 2026-03-24T08:54:55.812Z
-
-Source: https://platform.claude.com/docs/en/api/rate-limits.md
-FetchMode: markdown
-TimeoutSeconds: 20
-Tags: api, limits
-
 # Rate limits
 
 To mitigate misuse and manage capacity on the API, limits are in place on how much an organization can use the Claude API.

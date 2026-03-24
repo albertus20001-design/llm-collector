@@ -1,12 +1,3 @@
-# openrouter api-introduction
-
-Generated at: 2026-03-24T08:54:55.812Z
-
-Source: https://openrouter.ai/docs/quickstart.md
-FetchMode: markdown
-TimeoutSeconds: 20
-Tags: api
-
 ***
 
 title: Quickstart

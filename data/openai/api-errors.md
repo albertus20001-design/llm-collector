@@ -1,12 +1,3 @@
-# openai api-errors
-
-Generated at: 2026-03-24T08:54:55.812Z
-
-Source: https://developers.openai.com/api/docs/guides/error-codes.md
-FetchMode: markdown
-TimeoutSeconds: 20
-Tags: api, errors
-
 # Error codes
 
 This guide includes an overview on error codes you might see from both the [API](https://developers.openai.com/api/docs/introduction) and our [official Python library](https://developers.openai.com/api/docs/libraries#python-library). Each error code mentioned in the overview has a dedicated section with further guidance.

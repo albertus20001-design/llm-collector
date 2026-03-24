@@ -1,12 +1,3 @@
-# anthropic api-models
-
-Generated at: 2026-03-24T08:54:55.812Z
-
-Source: https://platform.claude.com/docs/en/about-claude/models.md
-FetchMode: markdown
-TimeoutSeconds: 20
-Tags: api, models
-
 # Models overview
 
 Claude is a family of state-of-the-art large language models developed by Anthropic. This guide introduces the available models and compares their performance.

@@ -1,12 +1,3 @@
-# anthropic api-error-codes
-
-Generated at: 2026-03-24T08:54:55.812Z
-
-Source: https://platform.claude.com/docs/en/api/errors.md
-FetchMode: markdown
-TimeoutSeconds: 20
-Tags: api, errors
-
 # Errors
 
 ---

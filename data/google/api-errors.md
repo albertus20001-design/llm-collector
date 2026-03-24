@@ -1,12 +1,3 @@
-# google api-errors
-
-Generated at: 2026-03-24T08:54:55.812Z
-
-Source: https://ai.google.dev/gemini-api/docs/troubleshooting.md.txt
-FetchMode: markdown
-TimeoutSeconds: 20
-Tags: api, errors
-
 Use this guide to help you diagnose and resolve common issues that arise when
 you call the Gemini API. You may encounter issues from either
 the Gemini API backend service or the client SDKs. Our client SDKs are
