@@ -13,35 +13,35 @@ vendors:
         rejectPatterns:
           - App unavailable in region
       - name: api-messages
-        url: https://docs.claude.com/en/api/messages
+        url: https://docs.claude.com/en/api/messages.md
         enabled: true
         priority: 2
         tags: [api]
         fetchMode: markdown
         outputPath: data/anthropic/api-messages.md
       - name: api-completions
-        url: https://docs.claude.com/en/api/completions
+        url: https://docs.claude.com/en/api/completions.md
         enabled: true
         priority: 2
         tags: [api]
         fetchMode: markdown
         outputPath: data/anthropic/api-completions.md
       - name: api-models
-        url: https://docs.claude.com/en/docs/about-claude/models
+        url: https://docs.claude.com/en/docs/about-claude/models.md
         enabled: true
         priority: 2
         tags: [api, models]
         fetchMode: markdown
         outputPath: data/anthropic/api-models.md
       - name: api-error-codes
-        url: https://docs.claude.com/en/api/errors
+        url: https://docs.claude.com/en/api/errors.md
         enabled: true
         priority: 3
         tags: [api, errors]
         fetchMode: markdown
         outputPath: data/anthropic/api-error-codes.md
       - name: api-rate-limits
-        url: https://docs.claude.com/en/api/rate-limits
+        url: https://docs.claude.com/en/api/rate-limits.md
         enabled: true
         priority: 3
         tags: [api, limits]
