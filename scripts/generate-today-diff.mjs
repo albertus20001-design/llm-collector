@@ -10,6 +10,15 @@ function changedFiles() {
   }
 }
 
+function classify(name) {
+  if (/pricing/i.test(name)) return 'pricing';
+  if (/rate-limits?/i.test(name)) return 'limits';
+  if (/error/i.test(name)) return 'errors';
+  if (/model/i.test(name)) return 'models';
+  if (/chat|responses?|introduction|messages|completions|api/i.test(name)) return 'api';
+  return 'other';
+}
+
 const files = changedFiles();
 const vendors = new Map();
 for (const file of files) {
@@ -27,7 +36,16 @@ if (files.length === 0) {
   md += `- Changed files: ${files.length}\n\n`;
   for (const [vendor, items] of vendors.entries()) {
     md += `## ${vendor}\n`;
-    for (const item of items) md += `- ${item}\n`;
+    const groups = new Map();
+    for (const item of items) {
+      const bucket = classify(item);
+      if (!groups.has(bucket)) groups.set(bucket, []);
+      groups.get(bucket).push(item);
+    }
+    for (const [bucket, list] of groups.entries()) {
+      md += `### ${bucket}\n`;
+      for (const item of list) md += `- ${item}\n`;
+    }
     md += '\n';
   }
   const misc = files.filter(f => !f.startsWith('data/'));
