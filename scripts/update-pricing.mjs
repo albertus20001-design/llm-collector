@@ -1,5 +1,6 @@
 import { execFileSync } from 'node:child_process';
-import { writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { dirname } from 'node:path';
 
 const sources = [
   {
@@ -21,17 +22,11 @@ function fetchUrl(url) {
 }
 
 const stamp = new Date().toISOString();
-let out = `# Model Pricing Snapshot\n\nGenerated at: ${stamp}\n\n`;
 for (const src of sources) {
-  const body = fetchUrl(src.url);
-  out += `## ${src.name}\n\nSource: ${src.url}\n\n\
-\
-\
-`;
-  out += body.trimEnd() + '\n\n';
+  const body = fetchUrl(src.url).trimEnd();
+  const out = `# ${src.name} pricing snapshot\n\nGenerated at: ${stamp}\n\nSource: ${src.url}\n\n${body}\n`;
+  const file = `data/${src.name}/pricing-snapshot.md`;
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, out);
+  console.log(`updated ${file}`);
 }
-
-const file = 'data/pricing-snapshot.md';
-const prev = existsSync(file) ? readFileSync(file, 'utf8') : '';
-writeFileSync(file, out);
-console.log(prev === out ? 'unchanged' : 'updated');
