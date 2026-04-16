@@ -56,11 +56,13 @@ Answer from:
 - `data/deepseek/pricing.md`
 - `data/deepseek/api-rate-limits.md`
 - `data/openrouter/api-rate-limits.md`
+- `docs/PRICING_TOPIC_GUIDE.md`
 
 Use for:
 - token pricing
 - tiers / spend control cues
 - RPM / TPM / quota docs
+- cache pricing / prompt-length pricing / server-tool pricing / multimodal pricing
 
 ### 4. Errors and Reliability
 Answer from:
