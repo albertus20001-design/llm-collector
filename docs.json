@@ -11,7 +11,7 @@
   "navigation": {
     "groups": [
       {
-        "group": "Overview",
+        "group": "总览",
         "pages": [
           "index",
           "change-log",
@@ -20,7 +20,7 @@
         ]
       },
       {
-        "group": "Guide",
+        "group": "指南",
         "pages": [
           "guide/sources",
           "guide/schedule",
@@ -30,7 +30,7 @@
         ]
       },
       {
-        "group": "Wiki",
+        "group": "知识库",
         "pages": [
           "wiki/index",
           "wiki/TOPIC_SUMMARY",
@@ -38,7 +38,7 @@
         ]
       },
       {
-        "group": "Vendors",
+        "group": "厂商",
         "pages": [
           "wiki/vendors/anthropic",
           "wiki/vendors/openai",
