@@ -8,6 +8,15 @@
 2. 厂商速率限制 / 配额文档
 3. 相关 FAQ 或聚合平台限制说明
 4. 同主题的厂商对比结论
+5. 计费专题子页面（共性 → 子专题 → 厂商差异）
+
+## 专题入口
+
+- [计费专题总览](./topics/billing)
+- [计费框架](./topics/billing/framework)
+- [Cache 计费](./topics/billing/cache-pricing)
+- [Server Tool / 工具计费](./topics/billing/server-tool-pricing)
+- [厂商差异](./topics/billing/vendor-differences)
 
 ## 按厂商查看
 

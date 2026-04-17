@@ -34,7 +34,12 @@
         "pages": [
           "wiki/index",
           "wiki/TOPIC_SUMMARY",
-          "wiki/PRICING_TOPIC_GUIDE"
+          "wiki/PRICING_TOPIC_GUIDE",
+          "wiki/topics/billing/index",
+          "wiki/topics/billing/framework",
+          "wiki/topics/billing/cache-pricing",
+          "wiki/topics/billing/server-tool-pricing",
+          "wiki/topics/billing/vendor-differences"
         ]
       },
       {
