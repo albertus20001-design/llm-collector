@@ -67,7 +67,7 @@
 - token 定价
 - 套餐 / 消费控制线索
 - RPM / TPM / 配额文档
-- 缓存定价 / 长上下文定价 / server tools 定价 / 多模态定价
+- 缓存定价 / 长上下文定价 / 服务端工具 定价 / 多模态定价
 
 ### 4. 错误与可靠性
 优先参考：
@@ -93,12 +93,12 @@
 
 适用问题：
 - JSON Schema 输出
-- function calling
+- 函数调用
 - JSON mode / response_format 行为
 
 ### 6. 路由 / 聚合平台
 优先参考：
-- `raw/openrouter/routing-provider-selection.md`
+- `raw/openrouter/routing-供应方-selection.md`
 - `raw/openrouter/faq.md`
 - `raw/openrouter/api-models.md`
 
@@ -120,4 +120,4 @@
 
 - OpenAI 在本仓库里仍缺少一份稳定、干净的官方 Markdown 总览页；当前 `api-responses` 是最接近核心 API 总览的锚点。
 - DeepSeek 快照来自官方 HTML 抽取，而不是稳定的 Markdown 端点，因此少量页面可能带有页脚噪音或编码残留。
-- OpenRouter 仍有进一步扩充空间，例如 service tiers、guardrails、tool-calling、server tools、ZDR 和 usage accounting。
+- OpenRouter 仍有进一步扩充空间，例如 service tiers、guardrails、tool-calling、服务端工具、ZDR 和 usage accounting。

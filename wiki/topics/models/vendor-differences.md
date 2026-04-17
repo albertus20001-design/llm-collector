@@ -4,19 +4,19 @@
 
 ## 先看共性结论
 
-- **Anthropic**：更适合强调 agent 工作流、可靠性、cache 与长提示语境
+- **Anthropic**：更适合强调智能体工作流、可靠性、缓存与长提示语境
 - **OpenAI**：更适合强调 Responses、工具、多模态和平台生态
 - **Google Gemini**：更适合强调长上下文、多模态和模型层级
 - **DeepSeek**：更适合强调成本敏感场景与基础 API 可比性
-- **OpenRouter**：更适合强调平台抽象、provider 路由和可接入性
+- **OpenRouter**：更适合强调平台抽象、供应商路由和可接入性
 
 ## 分厂商看
 
 ### Anthropic
 
 更适合回答：
-- agent / 工具工作流里谁更稳
-- cache 与长提示如何搭配
+- 智能体 / 工具工作流里谁更稳
+- 缓存 与长提示如何搭配
 
 参考：
 - `raw/anthropic/api-models.md`
@@ -47,7 +47,7 @@
 
 更适合回答：
 - 成本敏感情况下的基础模型选型
-- 在不追求最强 benchmark 时的性价比比较
+- 在不追求最强基准测试时的性价比比较
 
 参考：
 - `raw/deepseek/api-models.md`
@@ -56,12 +56,12 @@
 ### OpenRouter
 
 更适合回答：
-- 同一模型在不同 provider 下为什么体验不同
+- 同一模型在不同供应商下为什么体验不同
 - 平台可接入性与真实能力之间的落差
 
 参考：
 - `raw/openrouter/api-models.md`
-- `raw/openrouter/routing-provider-selection.md`
+- `raw/openrouter/routing-供应商-selection.md`
 - `raw/openrouter/faq.md`
 
 ## 回答模板
@@ -71,4 +71,4 @@
 1. 先按任务类型分类
 2. 再按成本 / 上下文 / 工具需求筛
 3. 再给候选模型
-4. 最后讲 trade-off，而不是只报一个冠军
+4. 最后讲取舍，而不是只报一个冠军

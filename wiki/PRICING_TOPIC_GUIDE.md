@@ -14,8 +14,8 @@
 
 - [计费专题总览](./topics/billing)
 - [计费框架](./topics/billing/framework)
-- [Cache 计费](./topics/billing/cache-pricing)
-- [Server Tool / 工具计费](./topics/billing/server-tool-pricing)
+- [缓存计费](./topics/billing/cache-pricing)
+- [服务端工具计费](./topics/billing/server-tool-pricing)
 - [厂商差异](./topics/billing/vendor-differences)
 
 ## 按厂商查看
@@ -26,7 +26,7 @@
 
 重点关注：
 - 输入 / 输出 token 定价
-- cache write / cache read
+- 缓存写入 / 缓存读取
 - 不同使用层级或额度限制
 
 ### OpenAI
@@ -62,7 +62,7 @@
 
 重点关注：
 - 聚合平台的限制规则
-- 不同 provider 路由可能带来的成本差异
+- 不同供应商路由可能带来的成本差异
 - 平台侧费用或使用说明
 
 ## 回答价格问题时的建议
