@@ -1,0 +1,56 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "Llm Collector",
+  "colors": {
+    "primary": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#4c1d95"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "groups": [
+      {
+        "group": "Overview",
+        "pages": [
+          "index",
+          "change-log",
+          "daily-summary",
+          "today-diff"
+        ]
+      },
+      {
+        "group": "Guide",
+        "pages": [
+          "guide/sources",
+          "guide/schedule",
+          "guide/output",
+          "guide/runbook",
+          "guide/changelog"
+        ]
+      },
+      {
+        "group": "Wiki",
+        "pages": [
+          "wiki/index",
+          "wiki/TOPIC_SUMMARY",
+          "wiki/PRICING_TOPIC_GUIDE"
+        ]
+      },
+      {
+        "group": "Vendors",
+        "pages": [
+          "wiki/vendors/anthropic",
+          "wiki/vendors/openai",
+          "wiki/vendors/google",
+          "wiki/vendors/deepseek",
+          "wiki/vendors/openrouter"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  }
+}

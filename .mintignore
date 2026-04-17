@@ -1,0 +1,5 @@
+# Keep source-of-truth data and internal workflows out of Mintlify processing.
+raw/
+scripts/
+skills/
+sources/

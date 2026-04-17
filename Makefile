@@ -19,6 +19,7 @@ install:
 	pnpm install
 
 dev:
+	@test -f docs.json || (echo "docs.json is required for Mintlify dev" && exit 1)
 	npm run dev
 
 build:

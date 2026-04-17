@@ -9,6 +9,23 @@ LLM intelligence collection repo.
 
 - `raw/`: official-source raw snapshots
 - `wiki/`: organized topic notes and indexes built from `raw/`
+- `docs.json`: Mintlify site configuration
+- `.mintignore`: excludes non-site content from Mintlify processing
+
+## Mintlify Reads
+
+- `docs.json`: site config, navigation, branding, and page structure
+- root `*.mdx`: top-level pages such as `index.mdx`, `change-log.mdx`, `daily-summary.mdx`, `today-diff.mdx`
+- `guide/`: operational and workflow pages included in navigation
+- `wiki/`: published topic notes, indexes, and vendor overview pages included in navigation
+- `public/`: static assets such as logos and favicon
+
+## Mintlify Ignores
+
+- `raw/`: raw source snapshots, excluded via `.mintignore`
+- `scripts/`: project automation scripts, excluded via `.mintignore`
+- `skills/`: Codex workflow assets, excluded via `.mintignore`
+- `sources/`: source definitions and config data, excluded via `.mintignore`
 
 ## Commands
 

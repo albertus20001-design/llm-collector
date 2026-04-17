@@ -32,9 +32,8 @@ for (const raw of lines) {
 for (const [v, sources] of Object.entries(vendors)) {
   const links = sources.map(({ name, outputPath }) => `- [${name}](${base}${outputPath})`).join('\n');
   const md = `# ${v}\n\nRaw snapshots for ${v}, organized for quick browsing.\n\n${links}\n`;
-  for (const file of [`vendors/${v}.mdx`, `wiki/vendors/${v}.md`]) {
-    mkdirSync(dirname(file), { recursive: true });
-    writeFileSync(file, md);
-    console.log(`updated ${file}`);
-  }
+  const file = `wiki/vendors/${v}.md`;
+  mkdirSync(dirname(file), { recursive: true });
+  writeFileSync(file, md);
+  console.log(`updated ${file}`);
 }
