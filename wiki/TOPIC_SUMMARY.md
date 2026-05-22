@@ -16,6 +16,11 @@ title: 主题总览
 
 ## 主题分类
 
+
+### 最新信号
+
+- [2026-05-22 OpenRouter 上架 Qwen3.7 Max](./signals/2026-05-22-openrouter-qwen37-max)
+
 ### 专题入口
 
 - [计费专题](./topics/billing)
