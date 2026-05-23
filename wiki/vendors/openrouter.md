@@ -16,3 +16,7 @@ OpenRouter 的原始资料快照，按快速浏览场景整理。
 - [faq](https://github.com/albertus20001-design/llm-collector/blob/main/raw/openrouter/faq.md)
 - [api-rate-limits](https://github.com/albertus20001-design/llm-collector/blob/main/raw/openrouter/api-rate-limits.md)
 - [api-errors](https://github.com/albertus20001-design/llm-collector/blob/main/raw/openrouter/api-errors.md)
+## 最新信号
+
+- [2026-05-22 OpenRouter 上架 Qwen3.7 Max](../signals/2026-05-22-openrouter-qwen37-max)：1M context，支持 tools / structured outputs / reasoning / include reasoning；价格 $2.50/M input、$7.50/M output、cache write $3.125/M。
+
